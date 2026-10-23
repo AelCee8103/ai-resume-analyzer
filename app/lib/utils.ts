@@ -4,6 +4,14 @@
  * @param decimals How many decimals to show (default 2)
  * @returns A formatted string
  */
+import clsx, {type ClassValue} from "clsx";
+import {twMerge} from "tailwind-merge";
+
+
+export function cn(...inputs: ClassValue[]) {
+    return twMerge(clsx(inputs));
+}
+
 export function formatSize(bytes: number, decimals: number = 2): string {
     if (bytes === 0) return '0 Bytes';
 
